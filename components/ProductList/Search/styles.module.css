@@ -1,0 +1,38 @@
+.search {
+    border: 2px solid #cecece;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.search :global(input) {    
+    flex: 1;
+    border: 0;
+    margin-left: 5px;
+}
+
+/* XS */
+@media only screen and (max-width: 600px) {
+    .search {
+        width: 100%;
+    }
+}
+
+/* SM */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .search {
+        width: 100%;
+    }
+}
+
+/* MD */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .search {
+        width: 100%;
+    }
+}

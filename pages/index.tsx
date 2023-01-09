@@ -2,20 +2,11 @@ import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ProductList from '../components/ProductList/index';
+import { ProductType } from '../components/ProductList/types';
 import productsJson from '../products.json';
 
-type Products = {
-  id: Number;
-  name: String;
-  value: Number;
-  discount: Number;
-  discountValue: Number;
-  image: String;
-  colors: String[];
-}
-
-export const getStaticProps: GetStaticProps<{ products: Products[] }> = () => {
-  const products: Products[] = productsJson || []
+export const getStaticProps: GetStaticProps<{ products: ProductType[] }> = () => {
+  const products: ProductType[] = productsJson || []
 
   return {
     props: {

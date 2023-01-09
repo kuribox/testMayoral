@@ -50,6 +50,12 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100vh;
+}
+
+body #__next {
+  display: flex;
+  height: 100%;
 }
 
 body {
@@ -62,3 +68,26 @@ a {
   text-decoration: none;
 }
 
+body, div, span, p, a {
+  font-family: roboto,sans-serif;
+  font-size: 15px;
+  color: #616162;
+}
+
+
+input[type=button] {
+  background-color: #0066c3;
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  border: 2px solid #cecece;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 15px;
+}
