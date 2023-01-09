@@ -8,7 +8,7 @@ type SearchType = {
   onChange: (elements : ProductType[]) => void;
 }
 
-const ProductList = ({ data, onChange } : SearchType) => {
+const Search = ({ data, onChange } : SearchType) => {
   const onSearch = useCallback((e : React.ChangeEvent<HTMLInputElement>) : void => {
     const { value } = e.target;
 
@@ -27,7 +27,7 @@ const ProductList = ({ data, onChange } : SearchType) => {
   }, [ data, onChange ]);
 
   return (
-    <div className={styles.search}>
+    <div className={styles.search} data-testid="search">
       <FaSearch />
       <input
         type="text"
@@ -38,4 +38,4 @@ const ProductList = ({ data, onChange } : SearchType) => {
   );
 };
 
-export default ProductList;
+export default Search;

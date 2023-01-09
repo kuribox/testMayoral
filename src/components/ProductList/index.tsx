@@ -5,11 +5,11 @@ import Search from './Search/index';
 import Order from './Order/index';
 import { ProductType } from './types';
 
-type ProductsList = {
+export interface Props {
   products: ProductType[];
 }
 
-const ProductList = ({ products } : ProductsList) => {
+const ProductList = ({ products } : Props) => {
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>(products);
 
   return (
@@ -20,7 +20,7 @@ const ProductList = ({ products } : ProductsList) => {
           onChange={(elements : ProductType[]) => setFilteredProducts(elements)}
         />
 
-        <Order 
+        <Order
           data={filteredProducts}
           onChange={(elements : ProductType[]) => setFilteredProducts([...elements])}
         />
@@ -31,7 +31,10 @@ const ProductList = ({ products } : ProductsList) => {
           <>
             {
               filteredProducts.map((product) => (
-                <Product key={String(product.id)} data={product} />
+                <Product 
+                  key={String(product.id)}
+                  data={product}
+                />
               ))
             }
           </>

@@ -8,7 +8,7 @@ type OrderType = {
   onChange: (elements : ProductType[]) => void;
 }
 
-const OrderType = ({ data, onChange } : OrderType) => {
+const Order = ({ data, onChange } : OrderType) => {
   const onOrder = useCallback((order : string) : void => {
     onChange(data.sort((a: ProductType, b: ProductType) => {
       if (order === 'asc') {
@@ -20,11 +20,11 @@ const OrderType = ({ data, onChange } : OrderType) => {
   }, [data, onChange]);
 
   return (
-    <div className={styles.order}>
-      <FaMinus onClick={() => onOrder('asc')}/>
-      <FaPlus onClick={() => onOrder('desc')} />
+    <div className={styles.order} data-testid="order">
+      <FaMinus data-testid="asc" onClick={() => onOrder('asc')}/>
+      <FaPlus data-testid="desc" onClick={() => onOrder('desc')} />
     </div>
   );
 };
 
-export default OrderType;
+export default Order;

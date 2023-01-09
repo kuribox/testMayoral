@@ -10,7 +10,7 @@ type ProductComponentType = {
   data: ProductType;
 }
 
-const Product = ({ data } : ProductComponentType) => {
+const  Product = ({ data } : ProductComponentType) => {
   const [color, setColor] = useState<string>(data ? data.colors[0] : '');
   const [showColors, setShowColors] = useState<boolean>(false);
 
@@ -23,7 +23,7 @@ const Product = ({ data } : ProductComponentType) => {
   }, [ data, color ]);
 
   return (
-    <div className={c(ComponentsStyles.card, styles.product)}>
+    <div className={c(ComponentsStyles.card, styles.product)}  data-testid={`product-${data.id}`}>
       <div className={styles.productImage}>
         <Image
           src={`${data.image}/${getColor(color)}/ffffff`}
