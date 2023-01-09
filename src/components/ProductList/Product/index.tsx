@@ -11,10 +11,10 @@ type ProductComponentType = {
 }
 
 const Product = ({ data } : ProductComponentType) => {
-  const [color, setColor] = useState<String>(data ? data.colors[0] : '');
-  const [showColors, setShowColors] = useState<Boolean>(false);
+  const [color, setColor] = useState<string>(data ? data.colors[0] : '');
+  const [showColors, setShowColors] = useState<boolean>(false);
 
-  const getColor = useCallback((color: String) : String => {
+  const getColor = useCallback((color: string) : string => {
     return colors.find(e => e.name.toLowerCase() === color.toLowerCase())?.hex.slice(1) || 'ffffff';
   }, []);
 

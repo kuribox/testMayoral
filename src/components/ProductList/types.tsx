@@ -1,9 +1,9 @@
 export type ProductType = {
   id: number;
-  name: String;
+  name: string;
   value: number;
   discount: number;
   discountValue: number;
-  image: String;
-  colors: String[];
+  image: string;
+  colors: string[];
 }
